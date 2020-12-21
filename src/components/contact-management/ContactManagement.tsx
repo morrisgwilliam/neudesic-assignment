@@ -8,7 +8,7 @@ export const ContactManagement: React.FC<RouteComponentProps> = (props) => {
   return (
     <>
       <Switch>
-        <Redirect from={`${matchUrl}`} to={`${matchUrl}/contacts`} />
+        <Redirect from={`${matchUrl}`} to={`${matchUrl}/contacts`} exact />
         <Route component={Contacts} path={`${matchUrl}/contacts`} exact />
         <Route path={`${matchUrl}/contacts/:contactID`} component={Contact} />
       </Switch>

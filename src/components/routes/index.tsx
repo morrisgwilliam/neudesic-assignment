@@ -6,9 +6,9 @@ export const PrivateRoutes: React.FC = () => {
   return (
     <>
       <Switch>
-        <Redirect from="/" to="contact-management" exact />
-        <Route path="contact-management" component={ContactManagement} />
-        <Route exact component={() => <>Page not found.</>} />
+        <Redirect from="/" to="/contact-management" exact />
+        <Route path="/contact-management" component={ContactManagement} />
+        <Route component={() => <>Page not found.</>} />
       </Switch>
     </>
   );
