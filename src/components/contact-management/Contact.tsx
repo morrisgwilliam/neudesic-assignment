@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getContact } from "../../store/actions/action.creators";
-import { IContactState } from "../../store/reducers/contactReducer";
+import { ApplicationState, actionCreators } from "../../store";
 
 const Contact: React.FC = () => {
-  const contact: IContactState = useSelector((state: any) => state.contact);
+  const contact = useSelector((state: ApplicationState) => state.contact);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getContact(`some id`));
+    const action = actionCreators.getContact(`some id`);
+    dispatch(action);
   }, [dispatch]);
 
   return (
