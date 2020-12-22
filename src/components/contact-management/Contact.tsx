@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ApplicationState, actionCreators } from "../../store";
+import { ApplicationState, actionCreators } from "#Store";
 
 const Contact: React.FC = () => {
   const contact = useSelector((state: ApplicationState) => state.contact);

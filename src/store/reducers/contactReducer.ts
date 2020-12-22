@@ -1,5 +1,5 @@
 import { ActionsEnum, ContactAction } from '../actions/actions.types'
-import {Contact} from '../../entities' 
+import {Contact} from '#Entities' 
 
 
 
