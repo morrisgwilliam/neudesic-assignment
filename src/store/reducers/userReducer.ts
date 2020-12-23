@@ -1,9 +1,17 @@
 import {actionTypes} from "../actions"
 
-
+export interface IUserState {
+    userID: string,
+    loggedIn: boolean,
+    loading: boolean,
+    error: Error | undefined
+}
 
 const initialState: any = {
-    loggedIn: false
+    userID: "my user id",
+    loading: false,
+    error: undefined,
+    loggedIn: true
 }
 
 const userReducer = (state: any = initialState, action: actionTypes.UserAction): any => {

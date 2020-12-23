@@ -1,7 +1,7 @@
-import {createStore, combineReducers, applyMiddleware, compose} from 'redux';
-import {userReducer,contactReducer} from './reducers';
+import {createStore, combineReducers, applyMiddleware, compose, CombinedState, Reducer} from 'redux';
+import {userReducer, contactsReducer, IContactsState, IUserState} from './reducers';
 import thunk from "redux-thunk";
-import { IContactState } from './reducers/contactReducer';
+import {actionTypes} from './actions'
 
 // add redux dev tools type to window property for typescript.
 
@@ -11,17 +11,18 @@ declare global {
     }
   }
 export interface IApplicationState {
-    user: any,
-    contact: IContactState
+    user: IUserState,
+    contacts: IContactsState
 }
 
 const middleware = [thunk];
 const initialState = {}
 
-const rootReducer = combineReducers(
+
+const rootReducer: Reducer<CombinedState<IApplicationState>, actionTypes.UserAction | actionTypes.ContactAction> = combineReducers(
     {
         user: userReducer,
-        contact: contactReducer
+        contacts: contactsReducer
     }
 );
 

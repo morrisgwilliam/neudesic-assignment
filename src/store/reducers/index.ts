@@ -1,4 +1,6 @@
-import userReducer from './userReducer'
-import contactReducer from './contactReducer'
+import userReducer, {IUserState as IUser} from './userReducer'
+import contactsReducer,{IContactsState as IContact} from './contactsReducer'
 
-export {userReducer, contactReducer}
+export type IUserState = IUser
+export type IContactsState = IContact
+export {userReducer, contactsReducer}

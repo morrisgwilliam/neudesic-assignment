@@ -1,21 +1,32 @@
-import {Contact} from '../../entities'
-export enum ActionsEnum {
-    // USER ACTIONS
-    USER_LOG_IN,
-    USER_LOG_OUT,
+import { Contact } from "#Entities";
+enum UserEnum {
+  // USER ACTIONS
+  USER_LOG_IN = "USER_LOG_IN",
+  USER_LOG_OUT = "USER_LOG_OUT",
 
-    // CONTACT ACTIONS
-    CONTACT_CREATE,
-    CONTACT_DELETE,
-    CONTACT_GET
+  // CONTACT ACTIONS
 }
+
+enum ContactEnum {
+  CONTACTS_REQUEST_BEGIN = "CONTACTS_REQUEST_BEGIN",
+  CONTACTS_REQUEST_END = "CONTACTS_REQUEST_END",
+  CONTACTS_REQUEST_FAILED = "CONTACTS_REQUEST_FAILED",
+
+  CONTACT_CREATE = "CONTACT_CREATE ",
+  CONTACT_DELETE_SUCCESS = "CONTACT_DELETE_SUCCESS",
+
+  CONTACTS_GET_SUCCESS = "CONTACTS_GET_SUCCESS",
+}
+
+export const ActionsEnum = { ...UserEnum, ...ContactEnum };
+//export type ActionsEnum = typeof ActionsEnum
 
 export type ContactAction = {
-    type: ActionsEnum.CONTACT_CREATE | ActionsEnum.CONTACT_DELETE | ActionsEnum.CONTACT_GET
-    payload?: Contact | {id: string}
-}
+  type: ContactEnum;
+  payload?: any;
+};
 
 export type UserAction = {
-    type: ActionsEnum.USER_LOG_IN | ActionsEnum.USER_LOG_OUT
-    user?: any
-}
+  type: UserEnum;
+  user?: any;
+};
