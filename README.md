@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+# Getting Started
+
+The web client is a Single Page Application built using React & several supporting libraries listed below.
+
+**Notable Libraries Used**
+
+1. Redux
+2. Typescript
+3. React Router Dom
+4. Material UI
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
